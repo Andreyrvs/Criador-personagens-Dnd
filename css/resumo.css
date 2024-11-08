@@ -1,0 +1,43 @@
+/* Garantir que a página e o card ocupem toda a tela */
+html,
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+.page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 100% da altura da viewport */
+}
+
+.card {
+    border-width: 2px;
+    border-style: solid;
+    border-color: #F3F3F3;
+    border-radius: 12px;
+    background-color: #ffffffff;
+    /* Centraliza o texto */
+    text-align: left;
+    /* Espaçamento interno */
+    padding: 1rem 3rem;
+    /* Largura do card */
+    width: 25rem;
+}
+
+.card h1 {
+    text-align: center;
+}
+
+.card span {
+    font-weight: bold;
+}
+
+.habilidades section {
+    display: flex;
+    justify-content: space-between;
+}

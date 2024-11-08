@@ -1,0 +1,153 @@
+html,
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+.page {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+
+    font-size: 1rem;
+    justify-content: center;
+}
+
+.card {
+    border-width: 2px;
+    border-style: solid;
+    border-color: #F3F3F3;
+    border-radius: 12px;
+    background-color: #ffffffff;
+    /* Centraliza o texto */
+    text-align: left;
+    /* Espaçamento interno */
+    padding: 1rem 3rem;
+    /* Largura do card */
+    width: 25rem;
+}
+
+.text {
+    font-size: larger;
+    text-align: center;
+}
+
+.distribuir-pontos {
+    display: flex;
+    flex-direction: column;
+    /* background-color: #5e5e5e2f; */
+    justify-content: space-evenly;
+    align-content: space-between;
+}
+
+.input-label {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0;
+}
+
+.input-label label {
+    flex: 0 0 68%;
+    margin-right: 5px;
+}
+
+.input-label input {
+    background-color: #f8f8f8fc;
+    border-radius: 6px;
+    border-width: 0;
+    border: none;
+    border-bottom: 2px solid #D4D4D4;
+    width: 25%;
+    min-width: 0;
+    max-width: 100%;
+    text-align: center;
+    cursor: text;
+    margin: 0;
+    padding: 8px 8px 10px 10px;
+    font-weight: normal;
+    color: #000000;
+    caret-color: #00438A;
+
+}
+
+.input-label input:focus {
+    outline: 2px solid #ABABAB;
+    border-bottom: 2px solid #ABABAB;
+}
+
+.limitacao-pontos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.min-max {
+    display: flex;
+    flex-direction: row;
+}
+
+.min-max p {
+    margin-right: 20px;
+}
+
+.total-pontos {
+    width: 118px;
+}
+
+.botao {
+    display: flex;
+    justify-content: flex-end;
+    align-items: start;
+    margin: 10px 0;
+    width: 50%;
+}
+
+.botao button {
+    background-color: #007bff;
+    border: none;
+    border-bottom: 2px solid #006ADB;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    width: 59.1%;
+}
+
+.botao button:hover {
+    background-color: #00438A;
+}
+
+.lista-custo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    color: #5e5e5e;
+    width: 50%;
+}
+
+.custo {
+    width: 100%;
+}
+
+.valores {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+}
+
+ul {
+
+    padding-left: 1.5rem;
+}

@@ -1,0 +1,116 @@
+html,
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+.main-formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    width: 100%;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    width: 70%;
+}
+
+label {
+    text-align: left;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #F3F3F3;
+    border-radius: 4px;
+    margin: 10px 0;
+}
+
+option:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+
+button {
+    background-color: #007bff;
+    border: none;
+    border-bottom: 2px solid #006ADB;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    /* width: 10%; */
+}
+
+button:hover {
+    background-color: #00438A;
+}
+
+.tabela-racas {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    width: 100%;
+}
+
+.tabela-racas table {
+    border-collapse: collapse;
+    margin: 10px;
+    width: 70%;
+}
+
+caption {
+    caption-side: top;
+    font-size: 1.5em;
+    margin: 10px;
+    font-weight: bold;
+}
+
+.cabeçalho {
+    text-align: left;
+}
+
+th {
+    border: 2px solid #F3F3F3;
+    padding: 10px;
+    text-align: left;
+
+}
+
+td {
+    border: 2px solid #F3F3F3;
+    padding: 10px;
+    text-align: left;
+    margin-left: 10px;
+}
+
+th {
+    background-color: #f4f4f4;
+    font-weight: bolder;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+.humano {
+    display: flex;
+    flex-direction: column;
+}
