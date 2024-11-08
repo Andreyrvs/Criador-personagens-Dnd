@@ -122,7 +122,7 @@ h1 {
     background-color: #00438A;
 }
 
-.lista-custo {
+.lista-custos {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -136,18 +136,21 @@ h1 {
     width: 50%;
 }
 
-.custo {
-    width: 100%;
-}
-
 .valores {
     display: flex;
     flex-direction: column;
-
     width: 100%;
 }
 
 ul {
+    list-style: none;
+    padding-left: 1rem;
+}
 
-    padding-left: 1.5rem;
+.valor {
+    margin-right: 10px;
+}
+
+.custo {
+    margin-left: 10px;
 }

@@ -29,42 +29,18 @@ if (isset($_SESSION['distribuirPontos'])) {
                 <span><?php echo $racas ?></span>
             </section>
             <section class="habilidades">
-                <section>
-                    <p>Força: <span><?php echo $atributos["forca"] ?></span></p>
-                </section>
-                <section>
-                    <p>Destreza: <span><?php echo $atributos["destreza"] ?></span></p>
-                </section>
-                <section>
-                    <p>Constituição: <span><?php echo $atributos["constituicao"] ?></span></p>
-                </section>
-                <section>
-                    <p>Inteligência: <span><?php echo $atributos["inteligencia"] ?></span></p>
-                </section>
-                <section>
-                    <p>Sabedoria: <span><?php echo $atributos["sabedoria"] ?></span></p>
-                </section>
-                <section>
-                    <p>Carisma: <span><?php echo $atributos["carisma"] ?></span></p>
-                </section>
+                <?php
+                echo "<h3>Atributos:</h3>";
+                echo "<ul>";
+                foreach ($distribuirPontos->getAtributos() as $atributo => $valor) {
+                    echo "<li>$atributo: $valor</li>";
+                }
+                echo "</ul>";
+                ?>
             </section>
         </section>
     </section>
 
-    <?php
-    foreach ($_SERVER as $key => $value) {
-        echo "{$key} {$value} <br>";
-    }
-    ?>
-    <hr>
-    <?php
-    echo "<h3>Atributos:</h3>";
-    echo "<ul>";
-    foreach ($distribuirPontos->getAtributos() as $atributo => $valor) {
-        echo "<li>$atributo: $valor</li>";
-    }
-    echo "</ul>";
-    ?>
 
 </body>
 

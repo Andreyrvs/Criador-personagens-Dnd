@@ -49,19 +49,19 @@ $atributos = $distribuirPontos->getAtributos();
                         <p>Restam <?php echo $distribuirPontos->getPontosDisponiveis(); ?></p>
                     </section>
                 </section>
-                <section class="lista-custo">
+                <section class="lista-custos">
                     <section class='footer'>
                         <p>Pontos de Habilidade:</p>
-                        <section class="custo">
+                        <section class="custos">
                             <section>
-                                <span>Valor</span>
-                                <span>Custo</span>
+                                <span>Valor - Custo</span>
+
                             </section>
                             <section class="valores">
                                 <?php
                                 echo "<ul>";
                                 foreach ($distribuirPontos->getCustoAtributo() as $valor => $custo) {
-                                    echo "<li><span class='valor'>$valor</span><span class='espacamento'></span><span class='custo'>$custo</span></li>";
+                                    echo "<li>" . "<span class='valor'>{$valor}</span> - <span class='custo'>{$custo}</span>" . "</li>";
                                 }
                                 echo "</ul>";
                                 ?>
