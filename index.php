@@ -52,19 +52,22 @@ $atributos = $distribuirPontos->getAtributos();
                 <section class="lista-custos">
                     <section class='footer'>
                         <p>Pontos de Habilidade:</p>
-                        <section class="custos">
-                            <section>
-                                <span>Valor - Custo</span>
-
+                        <section>
+                            <section class="custos">
+                                <small>valor</small>
+                                <small>-</small>
+                                <small>custo</small>
                             </section>
                             <section class="valores">
-                                <?php
-                                echo "<ul>";
-                                foreach ($distribuirPontos->getCustoAtributo() as $valor => $custo) {
-                                    echo "<li>" . "<span class='valor'>{$valor}</span> - <span class='custo'>{$custo}</span>" . "</li>";
-                                }
-                                echo "</ul>";
-                                ?>
+                                <ul>
+                                    <?php foreach ($distribuirPontos->getCustoAtributo() as $valor => $custo) : ?>
+                                        <li class='valor'>
+                                            <p><?php echo $valor ?> </p>
+                                            <p>-</p>
+                                            <p><?php echo $custo ?></p>
+                                        </li>
+                                    <?php endforeach ?>
+                                </ul>
                             </section>
                         </section>
                     </section>

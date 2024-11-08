@@ -144,13 +144,22 @@ h1 {
 
 ul {
     list-style: none;
-    padding-left: 1rem;
+    padding-left: 0;
+}
+
+.custos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 40%;
 }
 
 .valor {
-    margin-right: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 0.8rem;
+    width: 25%;
 }
 
-.custo {
-    margin-left: 10px;
-}
+.valor p {}

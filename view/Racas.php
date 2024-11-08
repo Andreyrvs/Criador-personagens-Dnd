@@ -52,7 +52,6 @@ $racas_lista = array(
             </section>
         </section>
     </form>
-
     <section class="tabela-racas">
         <table>
             <thead>
