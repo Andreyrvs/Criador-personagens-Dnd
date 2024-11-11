@@ -24,6 +24,6 @@ class Tiefling implements Racas
 
     public function getNome()
     {
-        return "";
+        return "Tiefling";
     }
 }
