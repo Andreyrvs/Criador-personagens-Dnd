@@ -1,5 +1,6 @@
 <?php
-interface Raca
+interface Racas
 {
-    public function aplicarBonus(Personagem $personagem);
+    public function getAtributos();
+    public function getNome();
 }

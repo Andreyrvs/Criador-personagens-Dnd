@@ -1,16 +1,29 @@
 <?php
 require_once "./model/Racas/interface/InterfaceRaca.php";
 
-class Humano implements Raca
+class Humano implements Racas
 {
-    public function aplicarBonus(Personagem $personagem)
+    private $atributos;
+
+    public function __construct()
     {
-        $forca = 1;
-        $destreza = 1;
-        $constituicao = 1;
-        $inteligencia = 1;
-        $sabedoria = 1;
-        $carisma = 1;
-        $personagem->aprimoramentoRacial($forca, $destreza, $constituicao, $inteligencia, $sabedoria, $carisma);
+        $this->atributos = array(
+            "Força" => 1,
+            "Destreza" => 1,
+            "Constituição" => 1,
+            "Inteligência" => 1,
+            "Sabedoria" => 1,
+            "Carisma" => 1,
+        );
+    }
+
+    public function getAtributos()
+    {
+        return $this->atributos;
+    }
+
+    public function getNome()
+    {
+        return "Humano";
     }
 }

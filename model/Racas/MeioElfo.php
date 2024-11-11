@@ -1,16 +1,29 @@
 <?php
 require_once "./model/Racas/interface/InterfaceRaca.php";
 
-class MeioElfo implements Raca
+class MeioElfo implements Racas
 {
-    public function aplicarBonus(Personagem $personagem)
+    private $atributos;
+
+    public function __construct()
     {
-        $forca = 0;
-        $destreza = 0;
-        $constituicao = 0;
-        $inteligencia = 0;
-        $sabedoria = 0;
-        $carisma = 2;
-        $personagem->aprimoramentoRacial($forca, $destreza, $constituicao, $inteligencia, $sabedoria, $carisma);
+        $this->atributos = array(
+            "Força" => 0,
+            "Destreza" => 0,
+            "Constituição" => 0,
+            "Inteligência" => 0,
+            "Sabedoria" => 0,
+            "Carisma" => 2,
+        );
+    }
+
+    public function getAtributos()
+    {
+        return $this->atributos;
+    }
+
+    public function getNome()
+    {
+        return "MeioElfo";
     }
 }

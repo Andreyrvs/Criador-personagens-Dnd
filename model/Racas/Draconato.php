@@ -1,16 +1,29 @@
 <?php
 require_once "./model/Racas/interface/InterfaceRaca.php";
 
-class Draconato implements Raca
+class Draconato implements Racas
 {
-    public function aplicarBonus(Personagem $personagem)
+    private $atributos;
+
+    public function __construct()
     {
-        $forca = 2;
-        $destreza = 0;
-        $constituicao = 0;
-        $inteligencia = 0;
-        $sabedoria = 0;
-        $carisma = 1;
-        $personagem->aprimoramentoRacial($forca, $destreza, $constituicao, $inteligencia, $sabedoria, $carisma);
+        $this->atributos = array(
+            "Força" => 2,
+            "Destreza" => 0,
+            "Constituição" => 0,
+            "Inteligência" => 0,
+            "Sabedoria" => 0,
+            "Carisma" => 1,
+        );
+    }
+
+    public function getAtributos()
+    {
+        return $this->atributos;
+    }
+
+    public function getNome()
+    {
+        return "Draconato";
     }
 }

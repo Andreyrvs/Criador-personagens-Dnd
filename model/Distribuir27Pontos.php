@@ -3,6 +3,7 @@
 class Distribuir27Pontos
 {
     private $pontosDisponiveis = 27;
+
     private $custoAtributo = array(
         8 => 0,
         9 => 1,
@@ -13,6 +14,7 @@ class Distribuir27Pontos
         14 => 7,
         15 => 9
     );
+
     private $atributos = array(
         'Força' => 8,
         'Destreza' => 8,
