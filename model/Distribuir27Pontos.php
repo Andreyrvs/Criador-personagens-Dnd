@@ -81,9 +81,9 @@ class Distribuir27Pontos
         return $this->pontosFinais;
     }
 
-    public function setPontosVida()
+    public function setPontosVida($atributosFinais)
     {
-        $constituicao = $this->pontosFinais["Constituição"];
+        $constituicao = $atributosFinais["Constituição"];
         return $this->modificadoresDeHabilidades[$constituicao] + 10;
     }
 }

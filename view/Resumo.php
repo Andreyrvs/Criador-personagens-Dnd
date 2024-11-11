@@ -32,7 +32,6 @@ if (isset($_SESSION['distribuirPontos'])) {
     $modificadores = $distribuirPontos->setModificadores();
     $modificado = $distribuirPontos->getModificadores();
     $atributosModificados = $distribuirPontos->getModificadores();
-    $pontosVida = $distribuirPontos->setPontosVida();
 }
 
 function adicionarEspacos($string)
@@ -42,7 +41,7 @@ function adicionarEspacos($string)
 
 $aplicarBonusRaca = new AplicarBonusRaca($distribuirPontos);
 $pontosFinaisComBonus = $aplicarBonusRaca->aplicarBonus($raca);
-
+$pontosVida = $distribuirPontos->setPontosVida($pontosFinaisComBonus);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
