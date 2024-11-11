@@ -30,6 +30,11 @@ if (isset($_SESSION['distribuirPontos'])) {
     $atributosDistribuidos = $distribuirPontos->getAtributos();
 }
 
+
+function adicionarEspacos($string)
+{
+    return preg_replace('/([a-z])([A-Z])/u', '$1 $2', $string);
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -47,7 +52,7 @@ if (isset($_SESSION['distribuirPontos'])) {
         <section class="card">
             <h2>Personagem</h2>
             <section>
-                <h3><?php echo $raca->getNome(); ?></h3>
+                <h3><?php echo adicionarEspacos($raca->getNome()); ?></h3>
             </section>
             <section class="habilidades">
                 <h4>Atributos</h4>
@@ -58,10 +63,17 @@ if (isset($_SESSION['distribuirPontos'])) {
                         </li>
                     <?php endforeach ?>
                 </ul>
+                <p>Aprimorementos raciais</p>
                 <?php foreach ($atributosRaca as $tes => $res): ?>
-                    <span>
-                        <?php echo $tes  . $res . "<br>" ?>
-                    </span>
+                    <ul>
+                        <?php
+                        if ($res !== 0): ?>
+                            <li>
+                                <?php echo $tes; ?>
+                                <?php echo  $res . "<br>"; ?>
+                            </li>
+                        <?php endif ?>
+                    </ul>
                 <?php endforeach ?>
             </section>
         </section>
