@@ -24,6 +24,7 @@ $racas_lista = array(
     "Meio Orc" => "Força(+2) Constituição (+1)",
     "Tiefling" => "Inteligência(+1) Carisma (+2)"
 );
+
 ?>
 
 <!DOCTYPE html>
@@ -41,14 +42,14 @@ $racas_lista = array(
     <form action="Racas.php" method="post">
         <section class="main-formulario">
             <section class="formulario">
-                <label for="racas">Selecione uma raça: </label>
-                <select id="racas" name="racas" required>
+                <label for="raca">Selecione uma raça: </label>
+                <select id="raca" name="raca" required>
                     <option value="" selected disabled>Opções</option>
                     <?php foreach ($racas_lista as $raca => $valor): ?>
                         <option value="<?php echo $raca ?>"> <?php echo $raca ?> </option>
                     <?php endforeach; ?>
                 </select>
-                <button type="submit">Enviar</button>
+                <button type="submit" value="Selecionar Raça">Enviar</button>
             </section>
         </section>
     </form>

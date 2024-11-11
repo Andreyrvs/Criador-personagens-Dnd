@@ -1,13 +1,33 @@
 <?php
 session_start();
-require_once 'model\Distribuir27Pontos.php'; // Adicionando a inclusão da classe
+// Auto loader
+spl_autoload_register(function ($class_name) {
+    $file = __DIR__ . '/../model/Racas/' . $class_name . '.php';
+    if (file_exists($file)) {
+        require_once $file;
+    }
+});
+
+require_once 'model\Distribuir27Pontos.php';
 
 if (isset($_SESSION['racas'])) {
     $raca = unserialize($_SESSION["racas"]);
+    if (class_exists($raca->getNome())) {
+        $caminhoRaca = "model/Racas/{$raca->getNome()}.php";
+        if (file_exists($caminhoRaca)) {
+            require_once $caminhoRaca;
+        }
+        $atributosRaca = $raca->getAtributos();
+    } else {
+        echo "Classe da raça não encontrada.";
+    }
+} else {
+    echo "Nenhuma raça selecionada.";
 }
+
 if (isset($_SESSION['distribuirPontos'])) {
     $distribuirPontos = unserialize($_SESSION['distribuirPontos']);
-    $atributos = $distribuirPontos->getAtributos();
+    $atributosDistribuidos = $distribuirPontos->getAtributos();
 }
 
 ?>
@@ -27,16 +47,21 @@ if (isset($_SESSION['distribuirPontos'])) {
         <section class="card">
             <h2>Personagem</h2>
             <section>
-                <p><?php echo $raca ?></p>
+                <h3><?php echo $raca->getNome(); ?></h3>
             </section>
             <section class="habilidades">
-                <h3>Atributos</h3>
-                <?php foreach ($distribuirPontos->getAtributos() as $atributo => $valor): ?>
-                    <ul>
+                <h4>Atributos</h4>
+                <ul>
+                    <?php foreach ($atributosDistribuidos as $atributo => $valor): ?>
                         <li>
                             <?php echo "{$atributo} : {$valor}" ?>
                         </li>
-                    </ul>
+                    <?php endforeach ?>
+                </ul>
+                <?php foreach ($atributosRaca as $tes => $res): ?>
+                    <span>
+                        <?php echo $tes  . $res . "<br>" ?>
+                    </span>
                 <?php endforeach ?>
             </section>
         </section>
