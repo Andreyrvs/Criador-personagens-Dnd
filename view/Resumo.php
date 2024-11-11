@@ -9,6 +9,7 @@ spl_autoload_register(function ($class_name) {
 });
 
 require_once 'model\Distribuir27Pontos.php';
+require_once "model\AplicarBonusRaca.php";
 
 if (isset($_SESSION['racas'])) {
     $raca = unserialize($_SESSION["racas"]);
@@ -29,6 +30,7 @@ if (isset($_SESSION['distribuirPontos'])) {
     $distribuirPontos = unserialize($_SESSION['distribuirPontos']);
     $atributosDistribuidos = $distribuirPontos->getAtributos();
     $modificadores = $distribuirPontos->setModificadores();
+    $modificado = $distribuirPontos->getModificadores();
     $atributosModificados = $distribuirPontos->getModificadores();
     $pontosVida = $distribuirPontos->setPontosVida();
 }
@@ -38,7 +40,8 @@ function adicionarEspacos($string)
     return preg_replace('/([a-z])([A-Z])/u', '$1 $2', $string);
 }
 
-
+$aplicarBonusRaca = new AplicarBonusRaca($distribuirPontos);
+$pontosFinaisComBonus = $aplicarBonusRaca->aplicarBonus($raca);
 
 ?>
 <!DOCTYPE html>
@@ -62,13 +65,16 @@ function adicionarEspacos($string)
             <section class="habilidades">
                 <h4>Atributos</h4>
                 <ul>
-                    <?php foreach ($atributosModificados as $atributo => $valor): ?>
+                    <?php foreach ($pontosFinaisComBonus as $atributo => $valor): ?>
                         <li>
                             <?php echo "{$atributo} : {$valor}" ?>
                         </li>
                     <?php endforeach ?>
                 </ul>
-                <h4>Aprimorementos raciais</h4>
+                <section>
+                    <p>Pontos de Vida: <span><?php echo $pontosVida ?></span></p>
+                </section>
+                <p>Aprimoramentos raciais</p>
                 <ul>
                     <?php foreach ($atributosRaca as $tes => $res): ?>
                         <?php
@@ -81,9 +87,18 @@ function adicionarEspacos($string)
                     <?php endforeach ?>
                 </ul>
             </section>
-            <section>
-                <p>Pontos de Vida: <span><?php echo $pontosVida ?></span></p>
 
+            <section>
+                <p>Modificadores:</p>
+                <ul>
+                    <?php foreach ($modificado as $key => $value) : ?>
+                        <li>
+                            <?php echo $key ?>
+                            <?php echo $value  ?>
+                        </li>
+
+                    <?php endforeach ?>
+                </ul>
             </section>
         </section>
     </section>
