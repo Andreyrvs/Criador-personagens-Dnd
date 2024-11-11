@@ -4,9 +4,6 @@ include_once 'model/Racas.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // $racas = new Racas();
-    // $racas->setAprimoramentos($atibutos);
-
     $erros = FALSE;
     $chaveRaca = $_POST['racas'];
     if (isset($_POST['racas'])) {
