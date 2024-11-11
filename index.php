@@ -8,10 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include 'controller/Distribuir27PontosController.php';
 }
 
-// Criar instância de Distribuir27Pontos
 $distribuirPontos = new Distribuir27Pontos();
-
-// Obter os atributos para gerar os inputs dinamicamente
 $atributos = $distribuirPontos->getAtributos();
 ?>
 
@@ -62,9 +59,9 @@ $atributos = $distribuirPontos->getAtributos();
                                 <ul>
                                     <?php foreach ($distribuirPontos->getCustoAtributo() as $valor => $custo) : ?>
                                         <li class='valor'>
-                                            <p><?php echo $valor ?> </p>
-                                            <p>-</p>
-                                            <p><?php echo $custo ?></p>
+                                            <span><?php echo $valor ?> </span>
+                                            <span>-</span>
+                                            <span><?php echo $custo ?></span>
                                         </li>
                                     <?php endforeach ?>
                                 </ul>

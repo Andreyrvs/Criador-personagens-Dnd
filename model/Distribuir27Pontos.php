@@ -51,4 +51,8 @@ class Distribuir27Pontos
     {
         return $this->custoAtributo;
     }
+    public function setModificadores()
+    {
+        return 0;
+    }
 }
