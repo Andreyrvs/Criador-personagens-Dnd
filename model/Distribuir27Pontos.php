@@ -3,6 +3,7 @@
 class Distribuir27Pontos
 {
     private $pontosDisponiveis = 27;
+    private $pontosFinais = array();
     private $modificadoresDeHabilidades = array(
         8 => -1,
         9 => -1,
@@ -52,13 +53,13 @@ class Distribuir27Pontos
         return false;
     }
 
-    public function getPontosDisponiveis()
-    {
-        return $this->pontosDisponiveis;
-    }
     public function getAtributos()
     {
         return $this->atributos;
+    }
+    public function getPontosDisponiveis()
+    {
+        return $this->pontosDisponiveis;
     }
     public function getCustoAtributo()
     {
@@ -66,11 +67,23 @@ class Distribuir27Pontos
     }
     public function setModificadores()
     {
-
         foreach ($this->atributos as $key => $value) {
-            echo $key;
-            echo $value;
-            return  0;
+            if ($this->modificadoresDeHabilidades[$value]) {
+
+                $modificador = $this->modificadoresDeHabilidades[$value];
+                $this->pontosFinais[$key] = $value + $modificador;
+            }
         }
+    }
+
+    public function getModificadores()
+    {
+        return $this->pontosFinais;
+    }
+
+    public function setPontosVida()
+    {
+        $constituicao = $this->atributos["Constituição"];
+        return 10 + $this->modificadoresDeHabilidades[$constituicao];
     }
 }

@@ -29,6 +29,8 @@ if (isset($_SESSION['distribuirPontos'])) {
     $distribuirPontos = unserialize($_SESSION['distribuirPontos']);
     $atributosDistribuidos = $distribuirPontos->getAtributos();
     $modificadores = $distribuirPontos->setModificadores();
+    $atributosModificados = $distribuirPontos->getModificadores();
+    $pontosVida = $distribuirPontos->setPontosVida();
 }
 
 function adicionarEspacos($string)
@@ -60,7 +62,7 @@ function adicionarEspacos($string)
             <section class="habilidades">
                 <h4>Atributos</h4>
                 <ul>
-                    <?php foreach ($atributosDistribuidos as $atributo => $valor): ?>
+                    <?php foreach ($atributosModificados as $atributo => $valor): ?>
                         <li>
                             <?php echo "{$atributo} : {$valor}" ?>
                         </li>
@@ -80,8 +82,8 @@ function adicionarEspacos($string)
                 </ul>
             </section>
             <section>
-                <?php echo $modificadores ?>
-                <p>Pontos de Vida:</p>
+                <p>Pontos de Vida: <span><?php echo $pontosVida ?></span></p>
+
             </section>
         </section>
     </section>
