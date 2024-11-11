@@ -22,11 +22,8 @@ h1 {
     border-color: #F3F3F3;
     border-radius: 12px;
     background-color: #ffffffff;
-    /* Centraliza o texto */
     text-align: left;
-    /* Espaçamento interno */
     padding: 1rem 3rem;
-    /* Largura do card */
     width: 25rem;
 }
 
