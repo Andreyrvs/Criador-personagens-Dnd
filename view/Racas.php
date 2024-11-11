@@ -5,26 +5,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 $racas_lista = array(
-    "Alto Elfo" => "Inteligência (+1)",
+    "AltoElfo" => "Inteligência (+1)",
     "Anao" => "Constituição (+2)",
-    "Anao da Colina" => "Sabedoria (+1)",
-    "Anao da Montanha" => "Força (+2)",
+    "AnaoDaColina" => "Sabedoria (+1)",
+    "AnaoDaMontanha" => "Força (+2)",
     "Draconato" => "Força (+2) Carisma (+1)",
     "Drow" => "Carisma (+1)",
     "Elfo" => "Destreza (+2)",
-    "Elfo da Floresta" => "Sabedoria (+1)",
+    "AnaoDaMontanha" => "Sabedoria (+1)",
     "Gnomo" => "Inteligência (+2)",
-    "Gnomo da Floresta" => "Destreza (+1)",
-    "Gnomo das Rochas" => "Constituição (+1)",
+    "GnomoDaFloresta" => "Destreza (+1)",
+    "GnomoDasRochas" => "Constituição (+1)",
     "Halfling" => "Destreza (+2)",
-    "Halfling Pés Leves" => "Carisma (+1)",
-    "Halfling Robusto" => "Constituição (+1)",
+    "HalflingPesLeves" => "Carisma (+1)",
+    "HalflingRobusto" => "Constituição (+1)",
     "Humano" => "Todos (+1,+1,+1,+1,+1,+1)",
-    "Meio Elfo" => "Carisma (+2)",
-    "Meio Orc" => "Força(+2) Constituição (+1)",
+    "MeioElfo" => "Carisma (+2)",
+    "MeioOrc" => "Força(+2) Constituição (+1)",
     "Tiefling" => "Inteligência(+1) Carisma (+2)"
 );
 
+function adicionarEspacos($string)
+{
+    return preg_replace('/([a-z])([A-Z])/u', '$1 $2', $string);
+}
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +50,8 @@ $racas_lista = array(
                 <select id="raca" name="raca" required>
                     <option value="" selected disabled>Opções</option>
                     <?php foreach ($racas_lista as $raca => $valor): ?>
-                        <option value="<?php echo $raca ?>"> <?php echo $raca ?> </option>
+                        <?php echo $valor ?>
+                        <option value="<?php echo $raca ?>"> <?php echo adicionarEspacos($raca) ?> </option>
                     <?php endforeach; ?>
                 </select>
                 <button type="submit" value="Selecionar Raça">Enviar</button>
@@ -67,7 +72,7 @@ $racas_lista = array(
             <tbody>
                 <?php foreach ($racas_lista as $raca => $valor): ?>
                     <tr>
-                        <td> <?php echo $raca ?> </td>
+                        <td> <?php echo adicionarEspacos($raca) ?> </td>
                         <td> <?php echo $valor ?> </td>
                     </tr>
                 <?php endforeach; ?>
