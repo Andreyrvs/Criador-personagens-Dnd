@@ -10,6 +10,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $distribuirPontos = new Distribuir27Pontos();
 $atributos = $distribuirPontos->getAtributos();
+$pontosDisponiveis = $distribuirPontos->getPontosDisponiveis();
+
+
 ?>
 
 <!DOCTYPE html>
@@ -20,6 +23,7 @@ $atributos = $distribuirPontos->getAtributos();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <title>Criação de Personagem Dnd</title>
+
 </head>
 
 <body>
@@ -42,8 +46,8 @@ $atributos = $distribuirPontos->getAtributos();
                         <p>Max: 15</p>
                     </section>
                     <section class="total-pontos">
-                        <p>Pontos 27</p>
-                        <p>Restam <?php echo $distribuirPontos->getPontosDisponiveis(); ?></p>
+
+                        <p>Restam <?php echo $pontosDisponiveis ?></p>
                     </section>
                 </section>
                 <section class="lista-custos">

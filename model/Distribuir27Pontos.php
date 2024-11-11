@@ -3,6 +3,20 @@
 class Distribuir27Pontos
 {
     private $pontosDisponiveis = 27;
+    private $modificadoresDeHabilidades = array(
+        8 => -1,
+        9 => -1,
+        10 => 0,
+        11 => 0,
+        12 => 1,
+        13 => 1,
+        14 => 2,
+        15 => 2,
+        16 => 3,
+        17 => 3,
+        18 => 4,
+        19 => 4,
+    );
 
     private $custoAtributo = array(
         8 => 0,
@@ -42,7 +56,6 @@ class Distribuir27Pontos
     {
         return $this->pontosDisponiveis;
     }
-
     public function getAtributos()
     {
         return $this->atributos;
@@ -53,6 +66,11 @@ class Distribuir27Pontos
     }
     public function setModificadores()
     {
-        return 0;
+
+        foreach ($this->atributos as $key => $value) {
+            echo $key;
+            echo $value;
+            return  0;
+        }
     }
 }

@@ -6,11 +6,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $distribuirPontos = new Distribuir27Pontos();
     $atributos = array_keys($distribuirPontos->getAtributos());
     $erros = FALSE;
+
     foreach ($atributos as $atributo) {
         if (isset($_POST[$atributo])) {
             $valor = $_POST[$atributo];
             $success = $distribuirPontos->setAtributo($atributo, $valor);
-
             if (!$success) {
                 echo "<br> Valor inválido para $atributo: $valor<br>";
                 $erros = TRUE;

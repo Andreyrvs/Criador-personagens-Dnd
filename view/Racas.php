@@ -29,6 +29,7 @@ function adicionarEspacos($string)
 {
     return preg_replace('/([a-z])([A-Z])/u', '$1 $2', $string);
 }
+
 ?>
 
 <!DOCTYPE html>

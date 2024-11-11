@@ -28,13 +28,16 @@ if (isset($_SESSION['racas'])) {
 if (isset($_SESSION['distribuirPontos'])) {
     $distribuirPontos = unserialize($_SESSION['distribuirPontos']);
     $atributosDistribuidos = $distribuirPontos->getAtributos();
+    $modificadores = $distribuirPontos->setModificadores();
 }
-
 
 function adicionarEspacos($string)
 {
     return preg_replace('/([a-z])([A-Z])/u', '$1 $2', $string);
 }
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -63,18 +66,22 @@ function adicionarEspacos($string)
                         </li>
                     <?php endforeach ?>
                 </ul>
-                <p>Aprimorementos raciais</p>
-                <?php foreach ($atributosRaca as $tes => $res): ?>
-                    <ul>
+                <h4>Aprimorementos raciais</h4>
+                <ul>
+                    <?php foreach ($atributosRaca as $tes => $res): ?>
                         <?php
                         if ($res !== 0): ?>
                             <li>
                                 <?php echo $tes; ?>
-                                <?php echo  $res . "<br>"; ?>
+                                <?php echo  $res; ?>
                             </li>
                         <?php endif ?>
-                    </ul>
-                <?php endforeach ?>
+                    <?php endforeach ?>
+                </ul>
+            </section>
+            <section>
+                <?php echo $modificadores ?>
+                <p>Pontos de Vida:</p>
             </section>
         </section>
     </section>
