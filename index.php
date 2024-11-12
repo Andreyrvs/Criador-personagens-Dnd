@@ -1,9 +1,7 @@
 <?php
-// Iniciar a sessão
 session_start();
 require_once "./model/Distribuir27Pontos.php";
 
-// Verificar se o formulário foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include 'controller/Distribuir27PontosController.php';
 }
@@ -11,8 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $distribuirPontos = new Distribuir27Pontos();
 $atributos = $distribuirPontos->getAtributos();
 $pontosDisponiveis = $distribuirPontos->getPontosDisponiveis();
-
-
+$custoAtributo = json_encode($distribuirPontos->getCustoAtributo());
 ?>
 
 <!DOCTYPE html>
@@ -23,6 +20,32 @@ $pontosDisponiveis = $distribuirPontos->getPontosDisponiveis();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <title>Criação de Personagem Dnd</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const atributoInputs = document.querySelectorAll('.distribuir-pontos input[type="number"]');
+            const pontosRestantes = document.querySelector('.total-pontos p');
+            const custoAtributo = <?php echo $custoAtributo; ?>;
+            atributoInputs.forEach(input => {
+                input.addEventListener('blur', function() {
+                    calcularPontos();
+                });
+                input.addEventListener('input', function() {
+                    calcularPontos();
+                });
+            });
+
+            function calcularPontos() {
+                let pontosDisponiveis = 27;
+                atributoInputs.forEach(input => {
+                    const valor = parseInt(input.value);
+                    if (valor >= 8 && valor <= 15) {
+                        pontosDisponiveis -= custoAtributo[valor];
+                    }
+                });
+                pontosRestantes.textContent = 'Restam ' + pontosDisponiveis;
+            }
+        });
+    </script>
 
 </head>
 
