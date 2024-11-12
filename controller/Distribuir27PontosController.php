@@ -14,10 +14,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (!$success) {
                 echo "<br> Valor inválido para $atributo: $valor<br>";
                 $erros = TRUE;
-            } #else
-            # echo "<br> $atributo ok para valor  $valor <br>";
+            }
         }
     }
+
     if (!$erros) {
         $_SESSION['distribuirPontos'] = serialize($distribuirPontos);
         header("Location: view\Racas.php");
