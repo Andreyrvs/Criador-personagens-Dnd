@@ -39,19 +39,6 @@ class Distribuir27Pontos
         'Carisma' => 8,
     );
 
-    // public function setAtributo($atributos, $valor)
-    // {
-    //     if (array_key_exists($atributos, $this->atributos)) {
-    //         if ($valor >= 8 && $valor <= 15) {
-    //             if ($this->custoAtributo[$valor] <= $this->pontosDisponiveis) {
-    //                 $this->pontosDisponiveis = $this->pontosDisponiveis - $this->custoAtributo[$valor];
-    //                 $this->atributos[$atributos] = $valor;
-    //                 return true;
-    //             }
-    //         }
-    //     }
-    //     return false;
-    // }
     public function setAtributo($atributo, $valor)
     {
         if (array_key_exists($atributo, $this->atributos)) {
@@ -82,12 +69,10 @@ class Distribuir27Pontos
     }
     public function setModificadores()
     {
+        $this->pontosFinais = array();
         foreach ($this->atributos as $key => $value) {
-            if ($this->modificadoresDeHabilidades[$value]) {
-
-                $modificador = $this->modificadoresDeHabilidades[$value];
-                $this->pontosFinais[$key] = $value + $modificador;
-            }
+            $modificador = $this->modificadoresDeHabilidades[$value] ?? 0;
+            $this->pontosFinais[$key] = $value + $modificador;
         }
     }
 
