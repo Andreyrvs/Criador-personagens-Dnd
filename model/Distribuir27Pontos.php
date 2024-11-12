@@ -39,20 +39,35 @@ class Distribuir27Pontos
         'Carisma' => 8,
     );
 
-    public function setAtributo($atributos, $valor)
+    // public function setAtributo($atributos, $valor)
+    // {
+    //     if (array_key_exists($atributos, $this->atributos)) {
+    //         if ($valor >= 8 && $valor <= 15) {
+    //             if ($this->custoAtributo[$valor] <= $this->pontosDisponiveis) {
+    //                 $this->pontosDisponiveis = $this->pontosDisponiveis - $this->custoAtributo[$valor];
+    //                 $this->atributos[$atributos] = $valor;
+    //                 return true;
+    //             }
+    //         }
+    //     }
+    //     return false;
+    // }
+    public function setAtributo($atributo, $valor)
     {
-        if (array_key_exists($atributos, $this->atributos)) {
+        if (array_key_exists($atributo, $this->atributos)) {
             if ($valor >= 8 && $valor <= 15) {
-                if ($this->custoAtributo[$valor] <= $this->pontosDisponiveis) {
-                    $this->pontosDisponiveis = $this->pontosDisponiveis - $this->custoAtributo[$valor];
-                    $this->atributos[$atributos] = $valor;
+                $custoAtual = $this->custoAtributo[$this->atributos[$atributo]];
+                $novoCusto = $this->custoAtributo[$valor];
+                $pontosNecessarios = $novoCusto - $custoAtual;
+                if ($pontosNecessarios <= $this->pontosDisponiveis) {
+                    $this->pontosDisponiveis -= $pontosNecessarios;
+                    $this->atributos[$atributo] = $valor;
                     return true;
                 }
             }
         }
         return false;
     }
-
     public function getAtributos()
     {
         return $this->atributos;
