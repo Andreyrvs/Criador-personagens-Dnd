@@ -31,6 +31,7 @@ if (isset($_SESSION['distribuirPontos'])) {
     $atributosDistribuidos = $distribuirPontos->getAtributos();
     $modificadores = $distribuirPontos->setModificadores();
     $modificado = $distribuirPontos->getModificadores();
+
     $atributosModificados = $distribuirPontos->getModificadores();
 }
 
@@ -88,7 +89,7 @@ $pontosVida = $distribuirPontos->setPontosVida($pontosFinaisComBonus);
             </section>
 
             <section>
-                <p>Modificadores:</p>
+                <p>Antes do bônus de raça:</p>
                 <ul>
                     <?php foreach ($modificado as $key => $value) : ?>
                         <li>
