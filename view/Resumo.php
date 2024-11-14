@@ -23,56 +23,60 @@ function adicionarEspacos($string)
 </head>
 
 <body>
-    <h1>Resumo</h1>
-    <section class="page">
-        <section class="card">
-            <h2>Personagem</h2>
-            <?php if (isset($raca)): ?>
-                <section>
-                    <h3><?php echo adicionarEspacos($raca->getNome()); ?></h3>
-                </section>
-            <?php endif; ?>
-
-            <section class="habilidades">
-                <h4>Atributos</h4>
-                <?php if (isset($pontosFinaisComBonus)): ?>
-                    <ul>
-                        <?php foreach ($pontosFinaisComBonus as $atributo => $valor): ?>
-                            <li><?php echo "{$atributo} : {$valor}" ?></li>
-                        <?php endforeach; ?>
-                    </ul>
-                <?php endif; ?>
-
-                <?php if (isset($pontosVida)): ?>
+    <header>
+        <h1>Resumo</h1>
+    </header>
+    <main>
+        <section class="page">
+            <section class="card">
+                <h2>Personagem</h2>
+                <?php if (isset($raca)): ?>
                     <section>
-                        <p>Pontos de Vida: <span><?php echo $pontosVida ?></span></p>
+                        <h3><?php echo adicionarEspacos($raca->getNome()); ?></h3>
                     </section>
                 <?php endif; ?>
 
-                <?php if (isset($atributosRaca)): ?>
-                    <p>Aprimoramentos raciais</p>
-                    <ul>
-                        <?php foreach ($atributosRaca as $tes => $res): ?>
-                            <?php if ($res !== 0): ?>
-                                <li><?php echo $tes . ' ' . $res; ?></li>
-                            <?php endif; ?>
-                        <?php endforeach; ?>
-                    </ul>
+                <section class="habilidades">
+                    <h4>Atributos</h4>
+                    <?php if (isset($pontosFinaisComBonus)): ?>
+                        <ul>
+                            <?php foreach ($pontosFinaisComBonus as $atributo => $valor): ?>
+                                <li><?php echo "{$atributo} : {$valor}" ?></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    <?php endif; ?>
+
+                    <?php if (isset($pontosVida)): ?>
+                        <section>
+                            <p>Pontos de Vida: <span><?php echo $pontosVida ?></span></p>
+                        </section>
+                    <?php endif; ?>
+
+                    <?php if (isset($atributosRaca)): ?>
+                        <p>Aprimoramentos raciais</p>
+                        <ul>
+                            <?php foreach ($atributosRaca as $tes => $res): ?>
+                                <?php if ($res !== 0): ?>
+                                    <li><?php echo $tes . ' ' . $res; ?></li>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </ul>
+                    <?php endif; ?>
+                </section>
+
+                <?php if (isset($modificado)): ?>
+                    <section>
+                        <p>Antes do bônus de raça:</p>
+                        <ul>
+                            <?php foreach ($modificado as $key => $value): ?>
+                                <li><?php echo $key . ' ' . $value ?></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </section>
                 <?php endif; ?>
             </section>
-
-            <?php if (isset($modificado)): ?>
-                <section>
-                    <p>Antes do bônus de raça:</p>
-                    <ul>
-                        <?php foreach ($modificado as $key => $value): ?>
-                            <li><?php echo $key . ' ' . $value ?></li>
-                        <?php endforeach; ?>
-                    </ul>
-                </section>
-            <?php endif; ?>
         </section>
-    </section>
+    </main>
 </body>
 
 </html>

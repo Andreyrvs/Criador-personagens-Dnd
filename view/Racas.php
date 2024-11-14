@@ -43,43 +43,47 @@ function adicionarEspacos($string)
 </head>
 
 <body>
-    <h1>Raças</h1>
-    <form action="Racas.php" method="post">
-        <section class="main-formulario">
-            <section class="formulario">
-                <label for="raca">Selecione uma raça: </label>
-                <select id="raca" name="raca" required>
-                    <option value="" selected disabled>Opções</option>
-                    <?php foreach ($racas_lista as $raca => $valor): ?>
-                        <?php echo $valor ?>
-                        <option value="<?php echo $raca ?>"> <?php echo adicionarEspacos($raca) ?> </option>
-                    <?php endforeach; ?>
-                </select>
-                <button type="submit" value="Selecionar Raça">Enviar</button>
+    <header>
+        <h1>Raças</h1>
+    </header>
+    <main>
+        <form action="Racas.php" method="post">
+            <section class="main-formulario">
+                <section class="formulario">
+                    <label for="raca">Selecione uma raça: </label>
+                    <select id="raca" name="raca" required>
+                        <option value="" selected disabled>Opções</option>
+                        <?php foreach ($racas_lista as $raca => $valor): ?>
+                            <?php echo $valor ?>
+                            <option value="<?php echo $raca ?>"> <?php echo adicionarEspacos($raca) ?> </option>
+                        <?php endforeach; ?>
+                    </select>
+                    <button type="submit" value="Selecionar Raça">Enviar</button>
+                </section>
             </section>
-        </section>
-    </form>
-    <section class="tabela-racas">
-        <table>
-            <thead>
-                <caption>
-                    Súmario: Valores de Habilidade
-                </caption>
-                <tr class="cabeçalho">
-                    <th>Raças</th>
-                    <th>Aprimoramentos Raciais:</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($racas_lista as $raca => $valor): ?>
-                    <tr>
-                        <td> <?php echo adicionarEspacos($raca) ?> </td>
-                        <td> <?php echo $valor ?> </td>
+        </form>
+        <section class="tabela-racas">
+            <table>
+                <thead>
+                    <caption>
+                        Súmario: Valores de Habilidade
+                    </caption>
+                    <tr class="cabeçalho">
+                        <th>Raças</th>
+                        <th>Aprimoramentos Raciais:</th>
                     </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    </section>
+                </thead>
+                <tbody>
+                    <?php foreach ($racas_lista as $raca => $valor): ?>
+                        <tr>
+                            <td> <?php echo adicionarEspacos($raca) ?> </td>
+                            <td> <?php echo $valor ?> </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </section>
+    </main>
 </body>
 
 </html>
