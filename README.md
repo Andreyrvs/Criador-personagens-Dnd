@@ -34,9 +34,9 @@ Adquiri as seguintes habilidades ao desenvolver esse projeto:
 
 ## Preview da Aplicação
 
-| ![home](images\front-home.png) | ![racas](images\front-racas.png) |
+| ![home](./images/front-home.png) | ![racas](./images/front-racas.png) |
 | ----------- | ----------- |
-| ![Personagem](images\front-personagem.png) | |
+| ![Personagem](./images/front-personagem.png) | |
 
 ## Instalando Dependências
 
