@@ -4,8 +4,6 @@ require_once 'controller/RacasController.php';
 $controller = new RacasController();
 $controller->selecionarRaca();
 
-
-
 $racas_lista = array(
     "AltoElfo" => "Inteligência (+1)",
     "Anao" => "Constituição (+2)",
