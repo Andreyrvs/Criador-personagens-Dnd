@@ -26,4 +26,8 @@ class GnomoDasRochas implements Racas
     {
         return "GnomoDasRochas";
     }
+    public function getAprimoramento()
+    {
+        return "Constituição (+1)";
+    }
 }

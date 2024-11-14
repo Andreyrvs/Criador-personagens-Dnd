@@ -26,4 +26,8 @@ class Anao implements Racas
     {
         return "Anao";
     }
+    public function getAprimoramento()
+    {
+        return "Constituição (+2)";
+    }
 }

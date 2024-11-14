@@ -26,4 +26,8 @@ class MeioElfo implements Racas
     {
         return "MeioElfo";
     }
+    public function getAprimoramento()
+    {
+        return "Carisma (+2)";
+    }
 }

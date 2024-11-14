@@ -26,4 +26,8 @@ class Humano implements Racas
     {
         return "Humano";
     }
+    public function getAprimoramento()
+    {
+        return "Todos (+1,+1,+1,+1,+1,+1)";
+    }
 }

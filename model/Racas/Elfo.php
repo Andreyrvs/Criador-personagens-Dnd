@@ -26,4 +26,8 @@ class Elfo implements Racas
     {
         return "Elfo";
     }
+    public function getAprimoramento()
+    {
+        return "Destreza (+2)";
+    }
 }

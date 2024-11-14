@@ -26,4 +26,8 @@ class MeioOrc implements Racas
     {
         return "MeioOrc";
     }
+    public function getAprimoramento()
+    {
+        return "Força(+2) Constituição (+1)";
+    }
 }

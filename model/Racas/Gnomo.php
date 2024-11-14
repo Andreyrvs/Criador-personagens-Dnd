@@ -26,4 +26,8 @@ class Gnomo implements Racas
     {
         return "Gnomo";
     }
+    public function getAprimoramento()
+    {
+        return "Inteligência (+2)";
+    }
 }

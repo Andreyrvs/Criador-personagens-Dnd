@@ -26,4 +26,8 @@ class AnaoDaMontanha implements Racas
     {
         return "AnaoDaMontanha";
     }
+    public function getAprimoramento()
+    {
+        return "Força (+2)";
+    }
 }

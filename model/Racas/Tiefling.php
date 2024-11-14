@@ -26,4 +26,8 @@ class Tiefling implements Racas
     {
         return "Tiefling";
     }
+    public function getAprimoramento()
+    {
+        return "Inteligência(+1) Carisma (+2)";
+    }
 }

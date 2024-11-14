@@ -26,4 +26,8 @@ class Halfling implements Racas
     {
         return "Halfling";
     }
+    public function getAprimoramento()
+    {
+        return "Destreza (+2)";
+    }
 }

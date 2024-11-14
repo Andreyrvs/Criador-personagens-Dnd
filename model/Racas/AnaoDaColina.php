@@ -26,4 +26,8 @@ class AnaoDaColina implements Racas
     {
         return "AnaoDaColina";
     }
+    public function getAprimoramento()
+    {
+        return "Sabedoria (+1)";
+    }
 }

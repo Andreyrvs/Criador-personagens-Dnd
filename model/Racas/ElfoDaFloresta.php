@@ -26,4 +26,8 @@ class ElfoDaFloresta implements Racas
     {
         return "ElfoDaFloresta";
     }
+    public function getAprimoramento()
+    {
+        return "Sabedoria (+1)";
+    }
 }

@@ -26,4 +26,8 @@ class HalflingPesLeves implements Racas
     {
         return "HalflingPesLeves";
     }
+    public function getAprimoramento()
+    {
+        return "Carisma (+1)";
+    }
 }

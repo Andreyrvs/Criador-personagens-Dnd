@@ -26,4 +26,8 @@ class Draconato implements Racas
     {
         return "Draconato";
     }
+    public function getAprimoramento()
+    {
+        return "Força (+2) Carisma (+1)";
+    }
 }

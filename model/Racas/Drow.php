@@ -26,4 +26,8 @@ class Drow implements Racas
     {
         return "Drow";
     }
+    public function getAprimoramento()
+    {
+        return "Carisma (+1)";
+    }
 }

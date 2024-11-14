@@ -26,4 +26,8 @@ class HalflingRobusto implements Racas
     {
         return "HalflingRobusto";
     }
+    public function getAprimoramento()
+    {
+        return "Constituição (+1)";
+    }
 }

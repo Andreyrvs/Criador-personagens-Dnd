@@ -26,4 +26,8 @@ class GnomoDaFloresta implements Racas
     {
         return "GnomoDaFloresta";
     }
+    public function getAprimoramento()
+    {
+        return "Destreza (+1)";
+    }
 }

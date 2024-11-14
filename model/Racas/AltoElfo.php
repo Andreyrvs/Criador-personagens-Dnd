@@ -25,4 +25,8 @@ class AltoElfo implements Racas
     {
         return "AltoElfo";
     }
+    public function getAprimoramento()
+    {
+        return "Inteligência (+1)";
+    }
 }
