@@ -19,7 +19,7 @@ function adicionarEspacos($string)
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/resumo.css">
-    <title>Resultado</title>
+    <title>Resumo</title>
 </head>
 
 <body>
@@ -62,17 +62,6 @@ function adicionarEspacos($string)
                     </ul>
                 <?php endif; ?>
             </section>
-
-            <?php if (isset($modificado)): ?>
-                <section>
-                    <p>Antes do bônus de raça:</p>
-                    <ul>
-                        <?php foreach ($modificado as $key => $value): ?>
-                            <li><?php echo $key . ' ' . $value ?></li>
-                        <?php endforeach; ?>
-                    </ul>
-                </section>
-            <?php endif; ?>
         </section>
 
     </main>
