@@ -46,7 +46,7 @@ function adicionarEspacos($string)
     <header>
         <h1>Raças</h1>
     </header>
-    <main>
+    <main class="page">
         <form action="Racas.php" method="post">
             <section class="main-formulario">
                 <section class="formulario">
@@ -62,6 +62,7 @@ function adicionarEspacos($string)
                 </section>
             </section>
         </form>
+
         <section class="tabela-racas">
             <table>
                 <thead>
@@ -83,6 +84,7 @@ function adicionarEspacos($string)
                 </tbody>
             </table>
         </section>
+
     </main>
 </body>
 
