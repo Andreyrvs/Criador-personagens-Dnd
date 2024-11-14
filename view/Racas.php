@@ -12,7 +12,7 @@ $racas_lista = array(
     "Draconato" => "Força (+2) Carisma (+1)",
     "Drow" => "Carisma (+1)",
     "Elfo" => "Destreza (+2)",
-    "AnaoDaMontanha" => "Sabedoria (+1)",
+    "ElfoDaFloresta" => "Sabedoria (+1)",
     "Gnomo" => "Inteligência (+2)",
     "GnomoDaFloresta" => "Destreza (+1)",
     "GnomoDasRochas" => "Constituição (+1)",
@@ -47,21 +47,20 @@ function adicionarEspacos($string)
         <h1>Raças</h1>
     </header>
     <main class="page">
-        <form action="Racas.php" method="post">
-            <section class="main-formulario">
-                <section class="formulario">
-                    <label for="raca">Selecione uma raça: </label>
-                    <select id="raca" name="raca" required>
-                        <option value="" selected disabled>Opções</option>
-                        <?php foreach ($racas_lista as $raca => $valor): ?>
-                            <?php echo $valor ?>
-                            <option value="<?php echo $raca ?>"> <?php echo adicionarEspacos($raca) ?> </option>
-                        <?php endforeach; ?>
-                    </select>
-                    <button type="submit" value="Selecionar Raça">Enviar</button>
-                </section>
+        <form action="Racas.php" method="post" class="formulario">
+            <label for="raca">Selecione uma raça: </label>
+            <section class="formulario-interno">
+                <select id="raca" name="raca" required>
+                    <option value="" selected disabled>Opções</option>
+                    <?php foreach ($racas_lista as $raca => $valor): ?>
+                        <?php echo $valor ?>
+                        <option value="<?php echo $raca ?>"> <?php echo adicionarEspacos($raca) ?> </option>
+                    <?php endforeach; ?>
+                </select>
+                <button type="submit" value="Selecionar Raça">Enviar</button>
             </section>
         </form>
+
 
         <section class="tabela-racas">
             <table>
@@ -84,6 +83,7 @@ function adicionarEspacos($string)
                 </tbody>
             </table>
         </section>
+
 
     </main>
 </body>
