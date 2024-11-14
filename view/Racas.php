@@ -57,7 +57,7 @@ function adicionarEspacos($string)
                         <option value="<?php echo $raca ?>"> <?php echo adicionarEspacos($raca) ?> </option>
                     <?php endforeach; ?>
                 </select>
-                <button type="submit" value="Selecionar Raça">Enviar</button>
+                <button type="submit" value="Selecionar Raça">Criar</button>
             </section>
         </form>
 

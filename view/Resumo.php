@@ -29,41 +29,46 @@ function adicionarEspacos($string)
     <main class="page">
 
         <section class="card">
-            <?php if (isset($raca)): ?>
-                <section>
+            <section>
+                <?php if (isset($raca)): ?>
                     <h2><?php echo adicionarEspacos($raca->getNome()); ?></h2>
-                </section>
-            <?php endif; ?>
-
-            <section class="habilidades">
-                <h4>Atributos</h4>
-                <?php if (isset($pontosFinaisComBonus)): ?>
-                    <ul>
-                        <?php foreach ($pontosFinaisComBonus as $atributo => $valor): ?>
-                            <li><?php echo "{$atributo} : {$valor}" ?></li>
-                        <?php endforeach; ?>
-                    </ul>
-                <?php endif; ?>
-
-                <?php if (isset($pontosVida)): ?>
-                    <section>
-                        <p>Pontos de Vida: <span><?php echo $pontosVida ?></span></p>
-                    </section>
-                <?php endif; ?>
-
-                <?php if (isset($atributosRaca)): ?>
-                    <p>Aprimoramentos raciais</p>
-                    <ul>
-                        <?php foreach ($atributosRaca as $tes => $res): ?>
-                            <?php if ($res !== 0): ?>
-                                <li><?php echo $tes . ' ' . $res; ?></li>
-                            <?php endif; ?>
-                        <?php endforeach; ?>
-                    </ul>
                 <?php endif; ?>
             </section>
-        </section>
 
+            <section class="habilidades">
+                <h4>Atributos:</h4>
+                <section id="habilidades">
+
+                    <?php if (isset($pontosFinaisComBonus)): ?>
+                        <ul>
+                            <?php foreach ($pontosFinaisComBonus as $atributo => $valor): ?>
+                                <li><?php echo "{$atributo} : {$valor}" ?></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    <?php endif; ?>
+                </section>
+
+                <section class="aprimoramentos">
+                    <?php if (isset($atributosRaca)): ?>
+                        <span>Aprimoramentos raciais</span>
+                        <ul>
+                            <?php foreach ($atributosRaca as $atributo => $valor): ?>
+                                <?php if ($valor !== 0): ?>
+                                    <li><?php echo $atributo . ' +' . $valor; ?></li>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </ul>
+                    <?php endif; ?>
+                </section>
+
+                <section id="Pts vida">
+                    <?php if (isset($pontosVida)): ?>
+                        <p>Pontos de Vida: <span><?php echo $pontosVida ?></span></p>
+                    <?php endif; ?>
+                </section>
+
+            </section>
+        </section>
     </main>
 </body>
 

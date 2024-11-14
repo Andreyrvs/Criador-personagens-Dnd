@@ -15,18 +15,19 @@ h1 {
 
 .card {
     border-width: 2px;
+    display: flex;
+    flex-direction: column;
     border-style: solid;
     border-color: #F3F3F3;
     border-radius: 12px;
     background-color: #ffffffff;
     text-align: left;
-    padding: 1rem 3rem;
+    padding: 2rem;
     width: 25rem;
 }
 
 .card h2 {
     text-align: center;
-    font-size: 1.5rem;
 }
 
 .card span {
@@ -35,5 +36,9 @@ h1 {
 
 .habilidades section {
     display: flex;
-    justify-content: space-between;
+}
+
+.aprimoramentos {
+    display: flex;
+    flex-direction: column;
 }

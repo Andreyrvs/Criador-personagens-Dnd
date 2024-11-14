@@ -29,14 +29,27 @@ $interface_requirement = '<?php
 require_once "./model/Racas/interface/InterfaceRaca.php";
 
 class CLASS_NAME implements Raca {
-    public function aplicarBonus(Personagem $personagem) {
-        $forca = 0;
-        $destreza = 0;
-        $constituicao = 0;
-        $inteligencia = 0;
-        $sabedoria = 0;
-        $carisma = 0;
-        $personagem->aprimoramentoRacial($forca, $destreza, $constituicao, $inteligencia, $sabedoria, $carisma);
+   private $atributos;
+    public function __construct()
+    {
+        $this->atributos = array(
+            "Força" => 0,
+            "Destreza" => 0,
+            "Constituição" => 0,
+            "Inteligência" => 0,
+            "Sabedoria" => 0,
+            "Carisma" => 0,
+        );
+    }
+
+    public function getAtributos()
+    {
+        return $this->atributos;
+    }
+
+    public function getNome()
+    {
+        return "Nome";
     }
 }
 ?>

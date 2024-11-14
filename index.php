@@ -107,7 +107,7 @@ $custoAtributo = json_encode($distribuirPontos->getCustoAtributo());
                     </section>
 
                     <section class="botao">
-                        <button type="submit">Enviar</button>
+                        <button type="submit">Criar</button>
                     </section>
 
                 </section>
