@@ -53,5 +53,5 @@ Adquiri as seguintes habilidades ao desenvolver esse projeto:
 - Para rodar o Back-end abre o terminal na pasta raiz:
 
   ```bash
-    php -S localhost:8000
+    $ php -S localhost:8000
   ```
