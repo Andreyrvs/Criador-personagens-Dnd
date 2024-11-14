@@ -36,4 +36,16 @@ class Distribuir27PontosController
             }
         }
     }
+    public function getAtributos()
+    {
+        return $this->distribuirPontos->getAtributos();
+    }
+    public function getPontosDisponiveis()
+    {
+        return $this->distribuirPontos->getPontosDisponiveis();
+    }
+    public function getCustoAtributo()
+    {
+        return $this->distribuirPontos->getCustoAtributo();
+    }
 }
