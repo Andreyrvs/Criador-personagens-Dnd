@@ -1,11 +1,13 @@
 <?php
 session_start();
+require_once 'controller/Distribuir27PontosController.php';
 require_once "./model/Distribuir27Pontos.php";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    include 'controller/Distribuir27PontosController.php';
-}
 
+$controller = new Distribuir27PontosController();
+$controller->validar27PontosSessao();
+
+// JavaScript
 $distribuirPontos = new Distribuir27Pontos();
 $atributos = $distribuirPontos->getAtributos();
 $pontosDisponiveis = $distribuirPontos->getPontosDisponiveis();
@@ -59,7 +61,7 @@ $custoAtributo = json_encode($distribuirPontos->getCustoAtributo());
                     <?php foreach ($atributos as $atributo => $valor): ?>
                         <section class="input-label">
                             <label for="<?php echo $atributo; ?>"><?php echo $atributo; ?></label>
-                            <input type="number" name="<?php echo $atributo; ?>" id="<?php echo $atributo; ?>" min="0" max="15" required <?php echo $atributo === 'forca' ? 'autofocus' : ''; ?>>
+                            <input type="number" name="<?php echo $atributo; ?>" id="<?php echo $atributo; ?>" min="8" max="15" required <?php echo $atributo === 'forca' ? 'autofocus' : ''; ?>>
                         </section>
                     <?php endforeach; ?>
                 </section>
@@ -69,7 +71,6 @@ $custoAtributo = json_encode($distribuirPontos->getCustoAtributo());
                         <p>Max: 15</p>
                     </section>
                     <section class="total-pontos">
-
                         <p>Restam <?php echo $pontosDisponiveis ?></p>
                     </section>
                 </section>
