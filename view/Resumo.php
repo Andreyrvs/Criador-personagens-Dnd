@@ -66,7 +66,7 @@ function adicionarEspacos($string)
                         <p>Pontos de Vida: <span><?php echo $pontosVida ?></span></p>
                     <?php endif; ?>
                 </section>
-
+                <button class="home"><a href="../index.php">Pagina inicial</a></button>
             </section>
         </section>
     </main>
