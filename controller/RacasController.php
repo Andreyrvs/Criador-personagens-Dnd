@@ -3,7 +3,7 @@ class RacasController
 {
     private $racaSelecionada;
     private $caminhoRaca;
-    private $classeRaca;
+    private $raca;
 
     public function __construct()
     {
@@ -17,8 +17,8 @@ class RacasController
             $this->caminhoRaca = "model/Racas/{$this->racaSelecionada}.php";
             if (file_exists($this->caminhoRaca)) {
                 require_once $this->caminhoRaca;
-                $this->classeRaca = new $this->racaSelecionada();
-                $_SESSION['racas'] = serialize($this->classeRaca);
+                $this->raca = new $this->racaSelecionada();
+                $_SESSION['racas'] = serialize($this->raca);
 
                 header("Location: Resumo.php");
                 exit();
@@ -26,5 +26,21 @@ class RacasController
                 echo "Raça não encontrada.";
             }
         }
+    }
+    public function getRacas()
+    {
+        $racas = [];
+        $racaClasses = ['AltoElfo', 'Anao', 'AnaoDaColina', 'AnaoDaMontanha', 'Draconato', 'Drow', 'Elfo', 'ElfoDaFloresta', 'Gnomo', 'GnomoDaFloresta', 'GnomoDasRochas', 'Halfling', 'HalflingPesLeves', 'HalflingRobusto', 'Humano', 'MeioElfo', 'MeioOrc', 'Tiefling'];
+        foreach ($racaClasses as $racaClass) {
+            $filePath = __DIR__ . "/../model/Racas/{$racaClass}.php";
+            if (file_exists($filePath)) {
+                require_once $filePath;
+                $raca = new $racaClass();
+                if ($raca instanceof Racas) {
+                    $racas[] = $raca;
+                }
+            }
+        }
+        return $racas;
     }
 }
