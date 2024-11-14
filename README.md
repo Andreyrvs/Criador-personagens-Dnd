@@ -4,11 +4,11 @@
 
 Projeto feito na Faculdade na matéria de Desenvolvimento Web 1. Utilizando programaçao oritenta a objetos `POO`, utilizo arquitetura model, view, controller `MVC`. Utilizo requisisões com metodo `post`, também mantenho o estado da aplicação com `$_SESSION` do `PHP`.
 
-<!-- 
+<!--
 > Utiliza a API []()
  -->
 
-<!-- 
+<!--
 Colegas que contribuíram para a realização do projeto:
 
 - [@colega1](https://github.com/ "github")
@@ -34,9 +34,9 @@ Adquiri as seguintes habilidades ao desenvolver esse projeto:
 
 ## Preview da Aplicação
 
-| ![home](./images/front-home) | ![racas](./images/front-racas) |
-| ----------- | ----------- | 
-| ![Personagem](./images/front-personagem) | |
+| ![home](images\front-home.png) | ![racas](images\front-racas.png) |
+| ----------- | ----------- |
+| ![Personagem](images\front-personagem.png) | |
 
 ## Instalando Dependências
 
@@ -53,4 +53,3 @@ Adquiri as seguintes habilidades ao desenvolver esse projeto:
   ```bash
     php -S localhost:8000
   ```
-
