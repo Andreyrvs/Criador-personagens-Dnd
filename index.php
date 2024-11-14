@@ -1,16 +1,13 @@
 <?php
 session_start();
 require_once 'controller/Distribuir27PontosController.php';
-require_once "./model/Distribuir27Pontos.php";
-
 
 $controller = new Distribuir27PontosController();
 $controller->validar27PontosSessao();
 
-$distribuirPontos = new Distribuir27Pontos();
-$atributos = $distribuirPontos->getAtributos();
-$pontosDisponiveis = $distribuirPontos->getPontosDisponiveis();
-$custoAtributo = json_encode($distribuirPontos->getCustoAtributo());
+$atributos = $controller->getAtributos();
+$pontosDisponiveis = $controller->getPontosDisponiveis();
+$custoAtributo = json_encode($controller->getCustoAtributo());
 ?>
 
 <!DOCTYPE html>
@@ -92,7 +89,7 @@ $custoAtributo = json_encode($distribuirPontos->getCustoAtributo());
 
                             <section class="valores">
                                 <ul>
-                                    <?php foreach ($distribuirPontos->getCustoAtributo() as $valor => $custo) : ?>
+                                    <?php foreach (json_decode($custoAtributo, true) as $valor => $custo) : ?>
                                         <li class='valor'>
                                             <span><?php echo $valor ?> </span>
                                             <span>-</span>
@@ -113,8 +110,3 @@ $custoAtributo = json_encode($distribuirPontos->getCustoAtributo());
                 </section>
             </form>
         </section>
-
-    </main>
-</body>
-
-</html>
