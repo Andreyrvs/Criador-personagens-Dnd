@@ -4,26 +4,31 @@ body {
 }
 
 
-h1 {
-    text-align: center;
-}
-
-
-.main-formulario {
+.page {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 10px;
-    padding: 10px;
-    width: 100%;
+}
+
+h1 {
+    text-align: center;
 }
 
 .formulario {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     padding: 10px;
-    width: 70%;
+    margin: 10px;
+    width: 50%;
+}
+
+.formulario-interno {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 0;
+
 }
 
 label {
@@ -31,17 +36,24 @@ label {
 }
 
 select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #F3F3F3;
+    background-color: #f4f4f4;
+    border-radius: 6px;
+    border-width: 0;
+    border: none;
+    border-bottom: 2px solid #D4D4D4;
     border-radius: 4px;
-    margin: 10px 0;
+    text-align: left;
+    cursor: pointer;
+    font-weight: normal;
+    padding: 10px;
+    color: #000000;
+    width: 70%;
 }
+
 
 option:nth-child(even) {
     background-color: #f9f9f9;
 }
-
 
 button {
     background-color: #007bff;
@@ -51,6 +63,7 @@ button {
     color: white;
     cursor: pointer;
     padding: 10px;
+    width: 25%;
 }
 
 button:hover {
@@ -64,19 +77,17 @@ button:hover {
     align-items: center;
     margin: 10px;
     padding: 10px;
-    width: 100%;
+    width: 50%;
 }
 
 .tabela-racas table {
     border-collapse: collapse;
-    margin: 10px;
-    width: 70%;
+    width: 100%;
 }
 
 caption {
     caption-side: top;
     font-size: 1.5em;
-    margin: 10px;
     font-weight: bold;
 }
 
@@ -95,7 +106,6 @@ td {
     border: 2px solid #F3F3F3;
     padding: 10px;
     text-align: left;
-    margin-left: 10px;
 }
 
 th {
