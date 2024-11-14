@@ -1,8 +1,10 @@
 <?php
 session_start();
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    include 'controller/RacasController.php';
-}
+require_once 'controller/RacasController.php';
+$controller = new RacasController();
+$controller->selecionarRaca();
+
+
 
 $racas_lista = array(
     "AltoElfo" => "Inteligência (+1)",
