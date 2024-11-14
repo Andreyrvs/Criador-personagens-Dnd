@@ -7,7 +7,6 @@ class ResumoController
     private $pontosVida;
     private $atributosRaca;
     private $modificado;
-    private $modificadores;
     private $distribuirPontos;
 
     public function __construct()
