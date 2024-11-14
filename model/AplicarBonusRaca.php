@@ -1,29 +1,30 @@
 <?php
-require_once "Distribuir27Pontos.php";
 
 class AplicarBonusRaca
 {
     private $distribuirPontos;
-
+    private $atributosRaca;
+    private $pontosFinais;
     public function __construct($distribuirPontos)
     {
+        require_once "Distribuir27Pontos.php";
         $this->distribuirPontos = $distribuirPontos;
     }
 
     public function aplicarBonus($raca)
     {
-        $atributosRaca = $raca->getAtributos();
-        $pontosFinais = $this->distribuirPontos->getModificadores();
+        $this->atributosRaca = $raca->getAtributos();
+        $this->pontosFinais = $this->distribuirPontos->getModificadores();
 
-        foreach ($atributosRaca as $atributo => $bonus) {
-            if (isset($pontosFinais[$atributo])) {
-                $pontosFinais[$atributo] += $bonus;
+        foreach ($this->atributosRaca as $atributo => $bonus) {
+            if (isset($this->pontosFinais[$atributo])) {
+                $this->pontosFinais[$atributo] += $bonus;
             } else {
-                $pontosFinais[$atributo] = $bonus;
+                $this->pontosFinais[$atributo] = $bonus;
             }
         }
 
         $this->distribuirPontos->setModificadores();
-        return $pontosFinais;
+        return  $this->pontosFinais;
     }
 }
