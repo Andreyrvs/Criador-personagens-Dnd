@@ -45,7 +45,7 @@ Adquiri as seguintes habilidades ao desenvolver esse projeto:
 - clone o projeto:
 
   ```bash
-  git clone git@github.com:Andreyrvs/Criador-personagens-Dnd.git
+    git@github.com:Andreyrvs/Criador-personagens-Dnd.git
   ```
 
 ## Executando aplicação
