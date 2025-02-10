@@ -20,7 +20,7 @@ Front-end:
 > Desenvolvido com: Html, Css, Javascript.
 
 Back-end:
-> Desenvolvido com: PHP, POO.
+> Desenvolvido com: PHP, POO, MVC.
 
 ## Habilidades
 
