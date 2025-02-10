@@ -2,7 +2,7 @@
 
 ## Contexto
 
-Projeto feito na Faculdade na matéria de Desenvolvimento Web 1. Utilizando programaçao oritenta a objetos `POO`, utilizo arquitetura model, view, controller `MVC`. Utilizo requisisões com metodo `post`, também mantenho o estado da aplicação com `$_SESSION` do `PHP`.
+Projeto feito na Faculdade na matéria de Desenvolvimento Web 1. Utilizando programação orientada a objetos POO, utilizo arquitetura model, view, controller MVC. Utilizo requisições com método post, também mantenho o estado da aplicação com `$_SESSION` do PHP. 
 
 <!--
 > Utiliza a API []()
